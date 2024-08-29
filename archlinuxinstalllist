@@ -1,0 +1,57 @@
+# some libs
+sudo pacman -Syyu libvoikko hspell nuspell hunspell aspell
+sudo pacman -Syu --needed base-devel
+# if use manjaro run this to install directly from AUR
+sudo pacman -S yay
+yay -S <package-name>
+
+# install OhMyPosh
+curl -s https://ohmyposh.dev/install.sh | bash -s
+# add this to .bashrc to load OhMyPosh
+export PATH=$PATH:/home/kawhi/.local/bin
+eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/themes/velvet.omp.json)"
+alias omp='oh-my-posh'
+
+# it's easier if use Alacritty
+sudo paru alacritty alacritty-themes
+alacritty-themes <theme-name> # example Gotham
+# install fonts
+oh-my-posh font install
+# or directly install meslo font
+oh-my-posh font install meslo
+# clone OhMyPosh themes folder
+mkdir ~/.config/oh-my-posh
+cd ~/.config/oh-my-posh
+git clone --depth=1 https://github.com/DungRaymond/themes.git
+# add this to .bashrc
+eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/themes/velvet.omp.json)" # example iterm2 gruvbox M365Princess jandedobbeleer lambdageneration powerlevel10k_rainbow velvet bubblesextra emodipt-extend
+
+# update file db
+sudo updatedb
+# update all packages
+sudo pacman -Syu
+# install a bunch of apps
+sudo pacman -S github-cli xed google-chrome visual-studio-code-bin
+# install nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+# or
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+# manually copy this to other profilerc
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+
+function repo() {
+    cd ~/Repo/$1
+}
+
+function gitu() {
+    git  add *;
+    git commit -m $1;
+    git push
+}
+
+function gitd() {
+    git fetch;
+    git pull
+}
