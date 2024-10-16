@@ -55,3 +55,46 @@ function gitd() {
     git fetch;
     git pull
 }
+
+## Powershell
+
+Function gitu {
+	param($message)
+	git add *;
+	if ($message) {
+		git commit -m $message
+	} else {
+		git commit -m 'fast commit';
+	}
+	git push origin main
+}
+Function gitd {
+	git fetch; git pull origin main
+}
+Function refe {
+	refreshenv
+}
+Function mon {
+	param($filename)
+	nodemon $filename
+}
+
+Function repo {
+    param($path)
+    Set-Location F:\repo\$path
+}
+Function nf {
+	param($filename)
+	New-Item -Path . -Name $filename -ItemType "file" -Value ""
+}
+Function pn {
+    param($command)
+    pnpm $command
+}
+Set-Alias -Name np -Value notepad
+Set-Alias -Name npp -Value notepad++
+Set-Alias -Name omp -Value oh-my-posh
+Clear-Host
+
+& ([ScriptBlock]::Create((oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\amro.omp.json" --print) -join "`n"))
+
