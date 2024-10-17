@@ -11,6 +11,10 @@ curl -s https://ohmyposh.dev/install.sh | bash -s
 export PATH=$PATH:/home/kawhi/.local/bin
 eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/themes/velvet.omp.json)"
 alias omp='oh-my-posh'
+alias pn="pnpm"
+
+#install pnpm
+curl -fsSL https://get.pnpm.io/install.sh | sh -
 
 # it's easier if use Alacritty
 sudo paru alacritty alacritty-themes
