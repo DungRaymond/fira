@@ -19,10 +19,7 @@ curl -fsSL https://get.pnpm.io/install.sh | sh -
 # it's easier if use Alacritty
 sudo paru alacritty alacritty-themes
 alacritty-themes <theme-name> # example Gotham
-# install fonts
-oh-my-posh font install
-# or directly install meslo font
-oh-my-posh font install meslo
+
 # clone OhMyPosh themes folder
 mkdir ~/.config/oh-my-posh
 cd ~/.config/oh-my-posh

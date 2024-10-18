@@ -3,6 +3,23 @@
 wget -c http://repo.antixlinux.com/bookworm/pool/main/a/antix-archive-keyring/antix-archive-keyring_20019.5.0_all.deb
 sudo dpkg -i antix-archive-keyring_20019.5.0_all.deb
 
+# install OhMyPosh
+curl -s https://ohmyposh.dev/install.sh | bash -s
+# clone OhMyPosh themes folder
+mkdir ~/.config/oh-my-posh
+cd ~/.config/oh-my-posh
+git clone --depth=1 https://github.com/DungRaymond/themes.git
+# add this to .bashrc to load OhMyPosh
+export PATH=$PATH:/home/kawhi/.local/bin
+eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/themes/velvet.omp.json)"
+alias omp='oh-my-posh'
+alias pn="pnpm"
+
+# install alacritty to completely use Oh My Posh color and things on antiX
+sudo apt install alacritty
+sudo cp ~/Repo/fira/home/.config/alacritty ~/.config
+
+# install gh cli
 (type -p wget >/dev/null || (sudo apt update && sudo apt-get install wget -y)) \
 	&& sudo mkdir -p -m 755 /etc/apt/keyrings \
 	&& wget -qO- https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null \
@@ -11,6 +28,7 @@ sudo dpkg -i antix-archive-keyring_20019.5.0_all.deb
 	&& sudo apt update \
 	&& sudo apt install gh -y
 
+# install sublime text
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/sublimehq-archive.gpg > /dev/null
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 sudo apt-get update
