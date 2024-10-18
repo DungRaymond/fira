@@ -35,3 +35,29 @@ sudo apt-get update
 sudo apt-get install sublime-text
 
 Take out the update command and run it last
+
+Mother fking sound problem is pain in the ass
+
+Getting pulseaudio in your system:
+
+1. Installing pulseaudio:
+Open a terminal and execute
+sudo apt-get install pulseaudio pavucontrol
+
+2. Make pulseaudio launch on startup
+Edit startuo file
+geany ~/.desktop-session/startup
+Add a line that launches pulseaudio
+
+#launch pulseaudio Daemon on startup
+pulseaudio -D &
+Save and exit
+
+3. Making volume-icon use pulseaudio (and manage volume and properties)
+right-click the volume icon in your systray and click on Preferences.
+Have External mixer execute pavucontrol. It originally says:
+External mixer desktop-defaults-run -t alsamixer
+Replace it with:
+External mixer pavucontrol
+
+Reboot your system.
