@@ -1,0 +1,5 @@
+
+# update GPG keyring
+wget -c http://repo.antixlinux.com/bookworm/pool/main/a/antix-archive-keyring/antix-archive-keyring_20019.5.0_all.deb
+sudo dpkg -i antix-archive-keyring_20019.5.0_all.deb
+
