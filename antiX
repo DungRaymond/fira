@@ -17,7 +17,7 @@ alias pn="pnpm"
 
 # install alacritty to completely use Oh My Posh color and things on antiX
 sudo apt install alacritty
-sudo cp ~/Repo/fira/home/.config/alacritty ~/.config
+sudo cp -r ~/Repo/fira/home/.config/alacritty ~/.config
 
 # install gh cli
 (type -p wget >/dev/null || (sudo apt update && sudo apt-get install wget -y)) \
