@@ -15,6 +15,9 @@ eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/themes/velvet.omp.jso
 alias omp='oh-my-posh'
 alias pn="pnpm"
 
+# install pnpm - with node installed
+corepack enable pnpm
+
 # install alacritty to completely use Oh My Posh color and things on antiX
 sudo apt install alacritty
 sudo cp -r ~/Repo/fira/home/.config/alacritty ~/.config
