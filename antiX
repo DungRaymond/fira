@@ -64,3 +64,10 @@ Replace it with:
 External mixer pavucontrol
 
 Reboot your system.
+
+Bluetooth problem
+
+uninstall `pulseaudio-module-bluetooth`
+`sudo apt remove pulseaudio-module-bluetooth`
+install 
+`sudo apt install libspa-0.2-bluetooth`
