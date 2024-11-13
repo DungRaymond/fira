@@ -48,7 +48,7 @@ Open a terminal and execute
 sudo apt-get install pulseaudio pavucontrol
 
 2. Make pulseaudio launch on startup
-Edit startuo file
+Edit startup file
 geany ~/.desktop-session/startup
 Add a line that launches pulseaudio
 
