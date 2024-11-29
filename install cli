@@ -1,5 +1,5 @@
 # some libs
-sudo pacman -Syyu libvoikko hspell nuspell hunspell aspell
+sudo pacman -Syu libvoikko hspell nuspell hunspell aspell
 sudo pacman -Syu --needed base-devel
 # if use manjaro run this to install directly from AUR
 sudo pacman -S yay
@@ -32,7 +32,7 @@ sudo updatedb
 # update all packages
 sudo pacman -Syu
 # install a bunch of apps
-sudo pacman -S github-cli xed google-chrome visual-studio-code-bin
+yay -S github-cli xed google-chrome visual-studio-code-bin
 # install nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 # or
