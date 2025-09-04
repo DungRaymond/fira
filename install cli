@@ -47,8 +47,8 @@ function repo() {
 }
 
 function gitu() {
-    git  add *;
-    git commit -m $1;
+    git add *;
+    git commit -m "${1:-fast commit endeavor}";
     git push
 }
 
@@ -56,6 +56,14 @@ function gitd() {
     git fetch;
     git pull
 }
+
+alias yan=yarn
+function raw() {
+    gedit ~/Repo/data/json/reverb.$1.json
+}
+
+export PATH=$PATH:/home/kawhi/.local/bin
+eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/themes/easy-term.omp.json)"
 
 ## Powershell
 
