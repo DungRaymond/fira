@@ -58,6 +58,8 @@ function gitd() {
 }
 
 alias yan=yarn
+alias omp='oh-my-posh'
+alias ged=gedit
 function raw() {
     gedit ~/Repo/data/json/reverb.$1.json
 }
